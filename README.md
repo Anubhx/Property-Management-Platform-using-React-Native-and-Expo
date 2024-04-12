@@ -54,5 +54,6 @@ Interested in contributing? Great! Please read the project's code of conduct bef
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Contact
-Your Name - anubhav.raj.srivastav27@gmail.com
+Your Name - anubhav.raj.srivastav27@gmail.com 
+
 Project Link: https://github.com/Anubhx/AirBnB-Clone-using-React-Native-and-Expo-.git
