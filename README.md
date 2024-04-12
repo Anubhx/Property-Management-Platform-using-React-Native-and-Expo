@@ -42,5 +42,6 @@ This command will help you open for app simulation and testing on physical devic
 
 ## Screenshots
 Include screenshots to highlight key functionalities of the app.
-![Screenshot of Application](screenshots/IMG-20240412-WA0010.jpg"App Screenshot")
+<img src="screenshots/IMG-20240412-WA0010.jpg" alt="Screenshot of Application" width="200"/>
+
 
