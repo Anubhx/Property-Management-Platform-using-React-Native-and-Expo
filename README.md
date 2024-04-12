@@ -29,5 +29,6 @@ Clone the repository and install the dependencies:
 git clone https://your-repository-url.com
 cd react-native-airbnb-clone-clerk
 npm install
+```bash
 
 ## Usage
