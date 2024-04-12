@@ -88,7 +88,7 @@ const ExploreHeader = ({ onCategoryChanged }: Props) => {
           {categories.map((item, index) => (
             <TouchableOpacity
               ref={(el) => (itemsRef.current[index] = el)}
-              key={index}
+              key={item.name}
               style={activeIndex === index ? styles.categoriesBtnActive : styles.categoriesBtn}
               onPress={() => selectCategory(index)}>
               <MaterialIcons
