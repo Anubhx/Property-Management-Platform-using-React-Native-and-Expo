@@ -1,11 +1,11 @@
-import React from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import React, { useEffect } from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, BackHandler } from 'react-native';
 import { useOAuth } from '@clerk/clerk-expo';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import Colors from "@/constants/Colors";
+import Colors from '@/constants/Colors';
 import { defaultStyles } from '@/constants/Styles';
-import { useWarmUpBrowser } from "@/hooks/useWarmUpBrowser";
+import { useWarmUpBrowser } from '@/hooks/useWarmUpBrowser';
 
 enum Strategy {
   Google = 'oauth_google',
@@ -21,6 +21,29 @@ const LoginPage = () => {
   const { startOAuthFlow: googleAuth } = useOAuth({ strategy: Strategy.Google });
   const { startOAuthFlow: githubAuth } = useOAuth({ strategy: Strategy.Github });
   const { startOAuthFlow: facebookAuth } = useOAuth({ strategy: Strategy.Facebook });
+
+  useEffect(() => {
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      () => {
+        handleBackPress();
+        return true; // Prevent default behavior (exiting the app)
+      }
+    );
+
+    return () => backHandler.remove();
+  }, []);
+
+  const handleBackPress = () => {
+    Alert.alert(
+      "Login Required",
+      "Please log in to continue.",
+      [
+        { text: "OK", onPress: () => console.log("OK Pressed") }
+      ],
+      { cancelable: false }
+    );
+  };
 
   const onSelectAuth = async (strategy: Strategy) => {
     const selectedAuth = {
@@ -45,6 +68,9 @@ const LoginPage = () => {
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity onPress={handleBackPress} style={{ position: 'absolute', top: 20, right: 20 }}>
+        <Ionicons name="close" size={24} color="black" />
+      </TouchableOpacity>
       <TextInput autoCapitalize="none" placeholder="Email" style={[defaultStyles.inputField, styles.inputField]} />
       <TouchableOpacity style={defaultStyles.btn}>
         <Text style={defaultStyles.btnText}>Continue</Text>
@@ -57,19 +83,14 @@ const LoginPage = () => {
       </View>
 
       <View style={styles.authOptionsContainer}>
-        <TouchableOpacity style={styles.btnOutline}>
-          <Ionicons name="mail-outline" size={24} style={defaultStyles.btnIcon} />
-          <Text style={styles.btnOutlineText}>Continue with Phone</Text>
+        <TouchableOpacity style={styles.btnOutline} onPress={() => onSelectAuth(Strategy.Google)}>
+          <Ionicons name="logo-google" size={24} style={defaultStyles.btnIcon} />
+          <Text style={styles.btnOutlineText}>Continue with Google</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.btnOutline} onPress={() => onSelectAuth(Strategy.Github)}>
           <Ionicons name="logo-github" size={24} style={defaultStyles.btnIcon} />
           <Text style={styles.btnOutlineText}>Continue with Github</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.btnOutline} onPress={() => onSelectAuth(Strategy.Google)}>
-          <Ionicons name="logo-google" size={24} style={defaultStyles.btnIcon} />
-          <Text style={styles.btnOutlineText}>Continue with Google</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.btnOutline} onPress={() => onSelectAuth(Strategy.Facebook)}>
