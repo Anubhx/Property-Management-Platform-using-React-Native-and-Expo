@@ -47,3 +47,12 @@ This command will help you open for app simulation and testing on physical devic
 
 
 
+## Contributing
+Interested in contributing? Great! Please read the project's code of conduct before making any changes.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+Your Name - anubhav.raj.srivastav27@gmail.com
+Project Link: https://github.com/Anubhx/AirBnB-Clone-using-React-Native-and-Expo-.git
