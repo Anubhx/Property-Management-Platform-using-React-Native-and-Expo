@@ -1,6 +1,6 @@
-# React Native AirBnB Clone with Clerk
+# React Native Property Management Platform with Clerk
 
-This project is a clone of AirBnB, developed using React Native and powered by Expo. It features robust user authentication managed by Clerk, providing a secure and streamlined user experience.
+This project is a Property Management Platform, developed using React Native and powered by Expo. It features robust user authentication managed by Clerk, providing a secure and streamlined user experience.
 
 ## Features
 
@@ -26,8 +26,8 @@ Before starting, ensure you have the following:
 Clone the repository and install the dependencies:
 
 ```bash
-git clone https://your-repository-url.com
-cd react-native-airbnb-clone-clerk
+git clone https://github.com/Anubhx/Property-Management-Platform-using-React-Native-and-Expo
+cd  Property-Management-Platform-using-React-Native-and-Expo
 npm install
 ``` 
 
@@ -54,6 +54,6 @@ Interested in contributing? Great! Please read the project's code of conduct bef
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Contact
-#### Your Name - anubhav.raj.srivastav27@gmail.com 
+####  anubhav.raj.srivastav27@gmail.com 
 
-#### Project Link: https://github.com/Anubhx/AirBnB-Clone-using-React-Native-and-Expo-.git
+#### Project Link: h[ttps://github.com/Anubhx/AirBnB-Clone-using-React-Native-and-Expo-.git](https://github.com/Anubhx/Property-Management-Platform-using-React-Native-and-Expo.git)
