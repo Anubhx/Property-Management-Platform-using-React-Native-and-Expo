@@ -6,7 +6,7 @@ import { View,
   Image,
   Dimensions, 
   TouchableOpacity, Share } from 'react-native';
-import listingsData from '@/assets/data/airbnb-listings.json';
+import listingsData from '@/assets/data/istings.json';
 import { Ionicons } from '@expo/vector-icons';
 import Colors from '@/constants/Colors';
 import Animated, {

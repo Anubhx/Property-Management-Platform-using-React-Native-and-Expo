@@ -2,7 +2,7 @@
 import { View, StyleSheet } from "react-native"; 
 import React, { useMemo, useState } from "react";
 import { Stack } from "expo-router";
-import listingsData from "@/assets/data/airbnb-listings.json";
+import listingsData from "@/assets/data/istings.json";
 import listingsDataGeo from '@/assets/data/airbnb-listings.geo.json';
 import ListingsMaps from "@/components/ListingsMaps";
 // import { TouchableOpacity } from "react-native-gesture-handler";
